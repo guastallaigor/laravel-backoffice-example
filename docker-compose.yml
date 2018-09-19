@@ -1,14 +1,26 @@
 version: '3'
 
+volumes:
+  sandbox-postgres-data:
+    driver: local
 services:
   postgres:
-    image: postgres
-    restart: always
+    image: postgres:10.3
+    container_name: sandbox-postgres
     volumes:
-      - './storage/app/postgres/data:/var/lib/postgresql/data'
-    environment:
-      - POSTGRES_DB=sabium
-      - POSTGRES_USER=sabium
-      - POSTGRES_PASSWORD=sabium
+      - sandbox-postgres-data:/var/lib/postgresql/data
     ports:
       - '5432:5432'
+    environment:
+      - POSTGRES_PASSWORD=sandbox
+      - POSTGRES_DB=sandbox
+      - POSTGRES_USER=sandbox
+  app:
+    image: ambientum/php:7.2-nginx
+    container_name: sandbox-app
+    volumes:
+      - .:/var/www/app
+    ports:
+      - '8888:80'
+    links:
+      - postgres
