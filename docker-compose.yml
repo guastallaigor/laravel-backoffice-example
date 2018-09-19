@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres
+    restart: always
+    volumes:
+      - './storage/app/postgres/data:/var/lib/postgresql/data'
+    environment:
+      - POSTGRES_DB=sabium
+      - POSTGRES_USER=sabium
+      - POSTGRES_PASSWORD=sabium
+    ports:
+      - '5432:5432'
