@@ -13,8 +13,8 @@ class CreateEmployeeTable extends Migration
      */
     public function up()
     {
-        Schema::create('employee', function (Blueprint $table) {
-            $table->uuid('id');
+        Schema::create('employees', function (Blueprint $table) {
+            $table->uuid('id')->primary();
             $table->string('fullName');
             $table->integer('brCpf');
             $table->string('email')->unique();

@@ -13,6 +13,8 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware(['api', 'jwt.auth', 'permissions'])->group(function () {
-    Route::apiResource('/employee', 'Employee\EmployeeController');
+
+// , 'jwt.auth', 'permissions'
+Route::middleware(['api'])->group(function () {
+    Route::apiResource('/employee', 'EmployeeController');
 });
