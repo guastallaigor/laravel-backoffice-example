@@ -32,6 +32,22 @@ class EmployeeController extends Controller
         return $this->save($request, $employee);
     }
 
+    public function active(Employee $employee)
+    {
+        $employee->active = true;
+        $employee->save();
+
+        return response()->json($employee, 200);
+    }
+
+    public function inactive(Employee $employee)
+    {
+        $employee->active = false;
+        $employee->save();
+
+        return response()->json($employee, 200);
+    }
+
     private function save(Request $request, Employee $employee)
     {
         // {
@@ -46,6 +62,7 @@ class EmployeeController extends Controller
         // 	"avenue": "Avenida Brasil",
         // 	"number": "3832",
         // 	"neighborhood": "Centro",
+        //  "complement": "apto 302",
         // 	"password": "teste123"
         // }
 
@@ -60,8 +77,9 @@ class EmployeeController extends Controller
         $employee->avenue = $request->json('avenue');
         $employee->number = $request->json('number');
         $employee->neighborhood = $request->json('neighborhood');
+        $employee->complement = $request->json('complement');
         $employee->password = $request->json('password');
-
+        $employee->active = true;
         $employee->save();
 
         return $this->show($employee);

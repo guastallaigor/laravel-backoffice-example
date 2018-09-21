@@ -16,7 +16,7 @@ class CreateEmployeesTable extends Migration
         Schema::create('employees', function (Blueprint $table) {
             $table->increments('id');
             $table->string('full_name');
-            $table->bigInteger('br_cpf');
+            $table->string('br_cpf');
             $table->string('email')->unique();
             $table->string('telephone_type');
             $table->string('telephone');
@@ -26,7 +26,9 @@ class CreateEmployeesTable extends Migration
             $table->string('avenue');
             $table->bigInteger('number');
             $table->string('neighborhood');
+            $table->string('complement');
             $table->string('password');
+            $table->boolean('active');
             $table->rememberToken();
             $table->timestamps();
         });

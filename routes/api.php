@@ -16,5 +16,7 @@ use Illuminate\Http\Request;
 
 // , 'jwt.auth', 'permissions'
 Route::middleware(['api'])->group(function () {
-    Route::apiResource('/employee', 'EmployeeController');
+    Route::apiResource('/v1/backoffice/employee', 'EmployeeController');
+    Route::post('/v1/backoffice/employee/active/{employee}', 'EmployeeController@active');
+    Route::post('/v1/backoffice/employee/inactive/{employee}', 'EmployeeController@inactive');
 });
