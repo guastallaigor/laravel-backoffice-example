@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Employee;
 use Illuminate\Http\Request;
-// use App\Http\Requests\EmployeeRequest;
+use App\Http\Requests\EmployeeRequest;
 
 class EmployeeController extends Controller
 {
@@ -17,7 +17,7 @@ class EmployeeController extends Controller
         return response()->json($data);
     }
 
-    public function store(Request $request)
+    public function store(EmployeeRequest $request)
     {
         return $this->save($request, new Employee());
     }
@@ -27,7 +27,7 @@ class EmployeeController extends Controller
         return response()->json($employee, $employee->wasRecentlyCreated ? 201 : 200);
     }
 
-    public function update(Request $request, Employee $employee)
+    public function update(EmployeeRequest $request, Employee $employee)
     {
         return $this->save($request, $employee);
     }
@@ -48,7 +48,7 @@ class EmployeeController extends Controller
         return response()->json($employee, 200);
     }
 
-    private function save(Request $request, Employee $employee)
+    private function save(EmployeeRequest $request, Employee $employee)
     {
         // {
         // 	"fullName": "Igor Guastalla de Lima",
@@ -85,7 +85,7 @@ class EmployeeController extends Controller
         return $this->show($employee);
     }
 
-    public function destroy(Employee $employee)
+    public function destroy(EmployeeRequest $employee)
     {
         $employee->delete();
 
