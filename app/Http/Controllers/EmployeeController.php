@@ -66,12 +66,12 @@ class EmployeeController extends Controller
         // 	"password": "teste123"
         // }
 
-        $employee->full_name = $request->json('fullName');
-        $employee->br_cpf = $request->json('brCpf');
+        $employee->full_name = $request->json('full_name');
+        $employee->br_cpf = $request->json('br_cpf');
         $employee->email = $request->json('email');
-        $employee->telephone_type = $request->json('telephoneType');
+        $employee->telephone_type = $request->json('telephone_type');
         $employee->telephone = $request->json('telephone');
-        $employee->zip_code = $request->json('zipCode');
+        $employee->zip_code = $request->json('zip_code');
         $employee->city = $request->json('city');
         $employee->state = $request->json('state');
         $employee->avenue = $request->json('avenue');
