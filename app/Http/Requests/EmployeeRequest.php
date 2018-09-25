@@ -37,7 +37,6 @@ class EmployeeRequest extends FormRequest
             'neighborhood' => 'required',
             'complement' => 'required',
             'password' => 'required|confirmed|min:8',
-            'active' => 'required|boolean',
         ];
     }
 }

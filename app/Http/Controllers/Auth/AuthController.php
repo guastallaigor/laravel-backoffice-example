@@ -9,31 +9,24 @@ use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
-    /**
-     * Generate jwt token for authentication.
-     *
-     * @param  Request $request
-     *
-     * @return Response
-     */
     public function authenticate(Request $request)
     {
-        try {
-            $token = $this
-                ->service
-                ->generateToken($request->login, $request->password);
+        $credentials = [
+            'email' => $request->json('login'),
+            'password' => $request->json('password'),
+        ];
 
-            return response(compact('token'));
-        } catch (Exception $e) {
-            return response(['Login or password invalid'], 401);
+        try {
+            if (! $token = JWTAuth::attempt($credentials)) {
+                return response()->json(['error' => 'invalid_credentials'], 401);
+            }
+        } catch (JWTException $e) {
+            return response()->json(['error' => 'could_not_create_token'], 500);
         }
+
+        return response()->json(compact('token'));
     }
 
-    /**
-     * Refresh jwt token.
-     *
-     * @return Response
-     */
     public function refresh()
     {
         $token = JWTAuth::refresh(JWTAuth::getToken());
