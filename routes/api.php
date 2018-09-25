@@ -13,10 +13,17 @@ use Illuminate\Http\Request;
 |
 */
 
-
-// , 'jwt.auth', 'permissions'
+// 'permissions'
 Route::middleware(['api'])->group(function () {
-    Route::apiResource('/v1/backoffice/employee', 'EmployeeController');
-    Route::post('/v1/backoffice/employee/active/{employee}', 'EmployeeController@active');
-    Route::post('/v1/backoffice/employee/inactive/{employee}', 'EmployeeController@inactive');
+    Route::group([
+            'prefix' => '/v1/backoffice/',
+        ], function () {
+        Route::post('login', 'Auth\AuthController@authenticate');
+
+        Route::middleware(['jwt.auth'])->group(function () {
+            Route::apiResource('employee', 'EmployeeController');
+            Route::post('employee/active/{employee}', 'EmployeeController@active');
+            Route::post('employee/inactive/{employee}', 'EmployeeController@inactive');
+        });
+    });
 });
