@@ -20,10 +20,6 @@ class AuthService
     {
         $credencials = ['email' => $login, 'password' => $senha];
 
-        if (! $token = JWTAuth::attempt($credencials)) {
-            throw new InvalidCredentiualsException('Login or password invalid!');
-        }
-
-        return $token;
+        return JWTAuth::attempt($credencials);
     }
 }
