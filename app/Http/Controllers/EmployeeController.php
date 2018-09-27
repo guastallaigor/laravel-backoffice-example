@@ -50,22 +50,6 @@ class EmployeeController extends Controller
 
     private function save(EmployeeRequest $request, Employee $employee)
     {
-        // {
-        // 	"fullName": "Igor Guastalla de Lima",
-        // 	"brCpf": "06151516982",
-        // 	"email": "limaguastallaigor@gmail.com",
-        // 	"telephoneType": "COMERCIAL",
-        // 	"telephone": "44999938455",
-        // 	"zipCode": "87013-000",
-        // 	"city": "Maringá",
-        // 	"state": "Paraná",
-        // 	"avenue": "Avenida Brasil",
-        // 	"number": "3832",
-        // 	"neighborhood": "Centro",
-        //  "complement": "apto 302",
-        // 	"password": "teste123"
-        // }
-
         $employee->full_name = $request->json('full_name');
         $employee->br_cpf = $request->json('br_cpf');
         $employee->email = $request->json('email');

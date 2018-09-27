@@ -10,6 +10,7 @@
         "fideloper/proxy": "^4.0",
         "laravel/framework": "5.7.*",
         "laravel/tinker": "^1.0",
+        "squizlabs/php_codesniffer": "*",
         "tymon/jwt-auth": "^0.5.12"
     },
     "require-dev": {
