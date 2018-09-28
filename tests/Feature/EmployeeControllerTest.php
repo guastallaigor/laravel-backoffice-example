@@ -17,7 +17,7 @@ class EmployeeControllerTest extends AuthenticatedTestCase
 
     public function testResourceShowMethodMustReturnAnEmployeeData()
     {
-        // We have 15 employees are created
+        // We have 10 employees are created
         /** @var Employee $employees */
         $employees = factory(Employee::class, 10)->create();
         $first = $employees->first();
@@ -25,7 +25,7 @@ class EmployeeControllerTest extends AuthenticatedTestCase
         // When we request the first one
         $response = $this->json('GET', $this->endpoint . $first->id);
 
-        // It should return an valid employee json
+        // It should return a valid, one employee json
         $response
             ->assertStatus(200)
             ->assertJson($this->jsonEmployeeStructure($first));
@@ -33,11 +33,14 @@ class EmployeeControllerTest extends AuthenticatedTestCase
 
     public function testResourceIndexMethodMustReturnAnEmployeeList()
     {
+        // We have 10 employees are created
         /** @var Employee $employees */
         $employees = factory(Employee::class, 10)->create();
 
+        // When we request the all of the employees
         $response = $this->json('GET', $this->endpoint);
 
+        // It should return a valid, pagination employee json
         $response
             ->assertStatus(200)
             ->assertJsonStructure([
