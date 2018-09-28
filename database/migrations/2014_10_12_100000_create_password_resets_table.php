@@ -13,6 +13,10 @@ class CreatePasswordResetsTable extends Migration
      */
     public function up()
     {
+        if (config('database.connections.sqlsrv.driver') == 'sqlite') {
+            return;
+        }
+
         Schema::create('password_resets', function (Blueprint $table) {
             $table->string('email')->index();
             $table->string('token');
@@ -27,6 +31,10 @@ class CreatePasswordResetsTable extends Migration
      */
     public function down()
     {
+        if (config('database.connections.sqlsrv.driver') == 'sqlite') {
+            return;
+        }
+
         Schema::dropIfExists('password_resets');
     }
 }

@@ -13,6 +13,10 @@ class CreateEmployeesTable extends Migration
      */
     public function up()
     {
+        if (config('database.connections.sqlsrv.driver') == 'sqlite') {
+            return;
+        }
+
         Schema::create('employees', function (Blueprint $table) {
             $table->increments('id');
             $table->string('full_name');
@@ -41,6 +45,10 @@ class CreateEmployeesTable extends Migration
      */
     public function down()
     {
+        if (config('database.connections.sqlsrv.driver') == 'sqlite') {
+            return;
+        }
+
         Schema::dropIfExists('employees');
     }
 }

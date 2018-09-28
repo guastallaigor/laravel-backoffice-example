@@ -5,7 +5,7 @@ namespace Tests\Feature;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
-class AuthControllerTest extends TestCase
+class AuthControllerInvalidTest extends TestCase
 {
     use DatabaseMigrations;
 
