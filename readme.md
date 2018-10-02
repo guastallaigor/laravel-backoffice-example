@@ -4,10 +4,10 @@
 </div>
 
 <p align="center">
-  Laravel Backoffice Example is a <a href="https://laravel.com/>Laravel</a> simple CRUD, with authentication login, and somewhat basic functionalities.
+  Laravel Backoffice Example is a <a href="https://laravel.com/">Laravel</a> simple CRUD, with authentication login, and somewhat basic functionalities.
 </p>
 
-[![Coding Standards](https://img.shields.io/badge/code%20style-PSR--2-orange.svg)](https://img.shields.io/badge/code%20style-PSR--2-orange.svg)
+[![Code Style](https://img.shields.io/badge/code%20style-PSR--2-orange.svg)](https://www.php-fig.org/psr/psr-2/)
 
 > **Note:** This project is ment to be used with the [Vue Backoffice Example](https://github.com/guastallaigor/vue-backoffice-example).
 > It has all the functionalities that is used with this project.
