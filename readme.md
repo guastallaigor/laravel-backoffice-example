@@ -31,15 +31,15 @@ By default it runs on `localhost:3000`.
 
 ## API Information Table
 
-Method | Request URL | Description |
---- | --- | --- | --- |
-GET | api/v1/backoffice/employee | List of employees |
-GET | api/v1/backoffice/employee/:id | Get one employee |
-POST | api/v1/backoffice/login | JWT Login |
-POST | api/v1/backoffice/employee | Create a new employee |
-POST | api/v1/backoffice/employee/active/:id | Change an employee to active |
-POST | api/v1/backoffice/employee/inactive/:id | Change an employee to inactive |
-DELETE | api/v1/backoffice/employee/:id | Delete an employee |
+Method | Request URL | Description
+--- | --- | ---
+GET | api/v1/backoffice/employee | List of employees
+GET | api/v1/backoffice/employee/:id | Get one employee
+POST | api/v1/backoffice/login | JWT Login
+POST | api/v1/backoffice/employee | Create a new employee
+POST | api/v1/backoffice/employee/active/:id | Change an employee to active
+POST | api/v1/backoffice/employee/inactive/:id | Change an employee to inactive
+DELETE | api/v1/backoffice/employee/:id | Delete an employee
 
 ## TODO
 
