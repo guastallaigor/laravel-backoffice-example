@@ -14,18 +14,18 @@ class EmployeesTableSeeder extends Seeder
     public function run()
     {
         $employee = new Employee();
-        $employee->full_name = 'Igor Guastalla de Lima';
-        $employee->br_cpf = '061.515.169-82';
-        $employee->email = 'limaguastallaigor@gmail.com';
+        $employee->full_name = 'Pedro';
+        $employee->br_cpf = '061.515.16-82';
+        $employee->email = 'teste@gmail.com';
         $employee->telephone_type = TelephoneTypesEnum::COMERCIAL;
-        $employee->telephone = '(44)99993-8455';
-        $employee->zip_code = '87013-000';
-        $employee->city = 'Maringá';
+        $employee->telephone = '(44)99845-8452';
+        $employee->zip_code = '81020-490';
+        $employee->city = 'Curitiba';
         $employee->state = 'Paraná';
-        $employee->avenue = 'Avenida Brasil';
-        $employee->number = '3832';
-        $employee->neighborhood = 'Centro';
-        $employee->complement = 'apto xxx';
+        $employee->avenue = 'Rua Cyro Correia Pereira';
+        $employee->number = '5';
+        $employee->neighborhood = 'Cidade Industrial';
+        $employee->complement = 'apto 123';
         $employee->password = 'teste123';
         $employee->active = true;
         $employee->save();
@@ -42,7 +42,7 @@ class EmployeesTableSeeder extends Seeder
         $employee2->avenue = 'Avenida Lagunas';
         $employee2->number = '22';
         $employee2->neighborhood = 'Zona 3';
-        $employee2->complement = 'Casa verde';
+        $employee2->complement = 'Green house';
         $employee2->password = 'teste321';
         $employee2->active = true;
         $employee2->save();

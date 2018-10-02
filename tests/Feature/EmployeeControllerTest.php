@@ -76,9 +76,6 @@ class EmployeeControllerTest extends AuthenticatedTestCase
                 'to',
                 'total',
             ]);
-
-        // $responseData = json_decode($response->getContent())->data;
-        // $this->assertCount(10, $responseData);
     }
 
     function jsonEmployeeStructure($employee)
