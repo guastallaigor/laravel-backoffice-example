@@ -26,7 +26,7 @@ class EmployeesTableSeeder extends Seeder
         $employee->number = '5';
         $employee->neighborhood = 'Cidade Industrial';
         $employee->complement = 'apto 123';
-        $employee->password = 'teste123';
+        $employee->password = bcrypt('teste123');
         $employee->active = true;
         $employee->save();
 
@@ -42,8 +42,8 @@ class EmployeesTableSeeder extends Seeder
         $employee2->avenue = 'Avenida Lagunas';
         $employee2->number = '22';
         $employee2->neighborhood = 'Zona 3';
+        $employee2->password = bcrypt('teste321');
         $employee2->complement = 'Green house';
-        $employee2->password = 'teste321';
         $employee2->active = true;
         $employee2->save();
     }
