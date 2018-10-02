@@ -7,9 +7,7 @@
   Laravel Backoffice Example is a <a href="https://laravel.com/>Laravel</a> simple CRUD, with authentication login, and somewhat basic functionalities.
 </p>
 
-
-[![Coding Standards](https://img.shields.io/badge/cs-PSR--2--R-yellow.svg)](https://github.com/php-fig-rectified/fig-rectified-standards)
-
+[![Coding Standards](https://img.shields.io/badge/code%20style-PSR--2-orange.svg)](https://img.shields.io/badge/code%20style-PSR--2-orange.svg)
 
 > **Note:** This project is ment to be used with the [Vue Backoffice Example](https://github.com/guastallaigor/vue-backoffice-example).
 > It has all the functionalities that is used with this project.
@@ -39,6 +37,7 @@ POST | api/v1/backoffice/login | JWT Login
 POST | api/v1/backoffice/employee | Create a new employee
 POST | api/v1/backoffice/employee/active/:id | Change an employee to active
 POST | api/v1/backoffice/employee/inactive/:id | Change an employee to inactive
+PUT | api/v1/backoffice/employee/:id | Modify an employee data
 DELETE | api/v1/backoffice/employee/:id | Delete an employee
 
 ## TODO
