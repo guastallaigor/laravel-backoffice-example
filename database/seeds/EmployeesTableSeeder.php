@@ -15,7 +15,7 @@ class EmployeesTableSeeder extends Seeder
     {
         $employee = new Employee();
         $employee->full_name = 'Pedro';
-        $employee->br_cpf = '061.515.16-82';
+        $employee->br_cpf = '525.832.430-39';
         $employee->email = 'teste@gmail.com';
         $employee->telephone_type = TelephoneTypesEnum::COMERCIAL;
         $employee->telephone = '(44)99845-8452';
@@ -32,7 +32,7 @@ class EmployeesTableSeeder extends Seeder
 
         $employee2 = new Employee();
         $employee2->full_name = 'João';
-        $employee2->br_cpf = '666.666.666-66';
+        $employee2->br_cpf = '100.208.030-44';
         $employee2->email = 'joao@gmail.com';
         $employee2->telephone_type = TelephoneTypesEnum::RESIDENTIAL;
         $employee2->telephone = '(43)12345-1234';
