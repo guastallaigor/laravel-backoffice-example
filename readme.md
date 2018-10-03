@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./public/logo-icon.png" width="128px">
+  <img src="./public/logo-icon.png" width="158px">
   <h1>Laravel Backoffice Example</h1>
 </div>
 
