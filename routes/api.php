@@ -14,13 +14,13 @@ use Illuminate\Http\Request;
 */
 
 // 'permissions'
-Route::middleware(['api'])->group(function () {
+Route::middleware([ 'api' ])->group(function () {
     Route::group([
             'prefix' => '/v1/backoffice/',
-        ], function () {
+        ], function() {
         Route::post('login', 'Auth\AuthController@authenticate');
 
-        Route::middleware(['jwt.auth'])->group(function () {
+        Route::middleware([ 'jwt.auth' ])->group(function () {
             Route::apiResource('employee', 'EmployeeController');
             Route::post('employee/active/{employee}', 'EmployeeController@active');
             Route::post('employee/inactive/{employee}', 'EmployeeController@inactive');
