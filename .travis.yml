@@ -9,13 +9,21 @@ branches:
   only:
     - master
 
+services:
+  - mysql
+
 before_script:
   - cp .env.travis .env
   - composer self-update
-  - composer install --no-interaction
+  - composer install --prefer-source --no-interaction --dev
   - php artisan key:generate
+  - php artisan jwt:generate
   - php artisan migrate
+  - composer dump-autoload
   - pear install pear/PHP_CodeSniffer
+
+before_install:
+  - mysql -e 'CREATE DATABASE laravel_test;'
 
 script:
   - vendor/bin/phpunit --coverage-text
