@@ -19,18 +19,13 @@ checks:
     fix_identation_4spaces: true
     fix_doc_comments: true
 
-tools:
-    external_code_coverage:
-      timeout: 600
-      runs: 3
-
 build:
     tests:
         override:
             -
-                command: 'vendor/bin/phpunit --coverage-clover tests/clover.xml --configuration tests/phpunit.xml'
+                command: 'vendor/bin/phpunit --coverage-clover clover.xml --configuration phpunit.xml'
                 coverage:
-                    file: 'tests/clover.xml'
+                    file: 'clover.xml'
                     format: 'clover'
     nodes:
         analysis:
