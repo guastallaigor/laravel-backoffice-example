@@ -1,6 +1,15 @@
 filter:
+  paths:
+    - 'app/*'
+    - 'src/*'
+    - 'tests/*'
   excluded_paths:
-    - "tests/*"
+    - 'bootstrap/*'
+    - 'config/*'
+    - 'public/*'
+    - 'resources/*'
+    - 'vendor/*'
+    - 'views/*'
 
 checks:
   php:
