@@ -78,6 +78,72 @@ class EmployeeControllerTest extends AuthenticatedTestCase
             ]);
     }
 
+    public function testMustCreateANewEmployee()
+    {
+        // We create one new employee and save it on the database
+        $employee = factory(Employee::class)->create();
+
+        // We create one new employee on memory
+        $newEmployee = factory(Employee::class)->make()->toArray();
+
+        // Find the last employee
+        $findedEmployee = Employee::find($employee->id);
+        $id = $findedEmployee ? $findedEmployee->id + 1 : 1;
+
+        // When we save this new employee
+        $newEmployee['password'] = 'teste123';
+        $newEmployee['password_confirmation'] = 'teste123';
+        $newEmployee['active'] = true;
+        $response = $this->json('POST', $this->endpoint, $newEmployee);
+
+        // It should return this valid json employee
+        $response
+            ->assertStatus(201)
+            ->assertJson([
+                'id' => $id,
+                'full_name' => $newEmployee['full_name'],
+                'br_cpf' => $newEmployee['br_cpf'],
+                'email' => $newEmployee['email'],
+                'telephone_type' => $newEmployee['telephone_type'],
+                'telephone' => $newEmployee['telephone'],
+                'zip_code' => $newEmployee['zip_code'],
+                'city' => $newEmployee['city'],
+                'state' => $newEmployee['state'],
+                'avenue' => $newEmployee['avenue'],
+                'number' => $newEmployee['number'],
+                'neighborhood' => $newEmployee['neighborhood'],
+                'complement' => $newEmployee['complement'],
+                'active' => $newEmployee['active'],
+            ])
+            ->assertJsonStructure([
+                'updated_at',
+                'created_at',
+            ]);
+    }
+
+    public function testUpdateAnEmployee()
+    {
+        // We create one new employee and save it on the database
+        $employee = factory(Employee::class)->create();
+
+        // We create one new employee on memory
+        $employeeModified = factory(Employee::class)->make()->toArray();
+        $employeeModified['password'] = 'teste123';
+        $employeeModified['password_confirmation'] = 'teste123';
+
+        // When we edit this employee
+        $uri = $this->endpoint . $employee->id;
+        $response = $this->json('PUT', $uri, $employeeModified);
+
+        // And find the employee edited in the database
+        $findedEmployee = Employee::find($employee->id)->toArray();
+
+        // It should return this valid json employee, with the full_name changed
+        $response
+            ->assertStatus(200)
+            ->assertJsonFragment($findedEmployee);
+    }
+
     function jsonEmployeeStructure($employee)
     {
         return [

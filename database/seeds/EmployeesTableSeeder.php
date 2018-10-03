@@ -1,7 +1,6 @@
 <?php
 
 use App\Employee;
-use App\TelephoneTypesEnum;
 use Illuminate\Database\Seeder;
 
 class EmployeesTableSeeder extends Seeder
@@ -17,7 +16,7 @@ class EmployeesTableSeeder extends Seeder
         $employee->full_name = 'Pedro';
         $employee->br_cpf = '525.832.430-39';
         $employee->email = 'teste@gmail.com';
-        $employee->telephone_type = TelephoneTypesEnum::COMERCIAL;
+        $employee->telephone_type = 'COMERCIAL';
         $employee->telephone = '(44)99845-8452';
         $employee->zip_code = '81020-490';
         $employee->city = 'Curitiba';
@@ -34,7 +33,7 @@ class EmployeesTableSeeder extends Seeder
         $employee2->full_name = 'João';
         $employee2->br_cpf = '100.208.030-44';
         $employee2->email = 'joao@gmail.com';
-        $employee2->telephone_type = TelephoneTypesEnum::RESIDENTIAL;
+        $employee2->telephone_type = 'RESIDENTIAL';
         $employee2->telephone = '(43)12345-1234';
         $employee2->zip_code = '82033-130';
         $employee2->city = 'Londrina';

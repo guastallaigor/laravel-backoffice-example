@@ -12,6 +12,7 @@ class Employee extends Model implements Authenticatable
 {
     use Notifiable;
     use AuthenticableTrait;
+
     protected $table = 'employees';
     public $timestamps = true;
 
@@ -24,4 +25,9 @@ class Employee extends Model implements Authenticatable
         'password', 'remember_token',
     ];
     protected $dateFormat = 'Y-m-d H:i:s';
+
+    public function getActiveAttribute($active)
+    {
+        return (bool) $active;
+    }
 }
