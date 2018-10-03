@@ -4,7 +4,7 @@
 </div>
 
 <p align="center">
-  Laravel Backoffice Example is a <a href="https://laravel.com/">Laravel</a> simple CRUD, with authentication login, and somewhat basic functionalities.
+  Laravel Backoffice Example is a <a href="https://laravel.com/">Laravel</a> simple CRUD API, with authentication login, and somewhat basic functionalities.
 </p>
 
 [![Code Style](https://img.shields.io/badge/code%20style-PSR--2-orange.svg)](https://www.php-fig.org/psr/psr-2/)
