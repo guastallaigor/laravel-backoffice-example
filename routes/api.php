@@ -18,12 +18,12 @@ Route::middleware([ 'api' ])->group(function () {
     Route::group([
             'prefix' => '/v1/backoffice/',
         ], function() {
-        Route::post('login', 'Auth\AuthController@authenticate');
+        Route::post('login', 'Domains\AuthController@authenticate');
 
         Route::middleware([ 'jwt.auth' ])->group(function () {
-            Route::apiResource('employee', 'EmployeeController');
-            Route::post('employee/active/{employee}', 'EmployeeController@active');
-            Route::post('employee/inactive/{employee}', 'EmployeeController@inactive');
+            Route::apiResource('employee', 'Domains\EmployeeController');
+            Route::post('employee/active/{employee}', 'Domains\EmployeeController@active');
+            Route::post('employee/inactive/{employee}', 'Domains\EmployeeController@inactive');
         });
     });
 });

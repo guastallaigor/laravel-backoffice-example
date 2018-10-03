@@ -1,9 +1,9 @@
 filter:
   paths:
-    - 'app/*'
-    - 'src/*'
+    - 'app/Http/Controllers/Domains/*'
     - 'tests/*'
   excluded_paths:
+    - 'app/Http/Controllers/Auth/*'
     - 'bootstrap/*'
     - 'config/*'
     - 'public/*'
