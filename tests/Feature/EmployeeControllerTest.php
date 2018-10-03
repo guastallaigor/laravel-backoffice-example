@@ -211,7 +211,7 @@ class EmployeeControllerTest extends AuthenticatedTestCase
         $this->assertEquals(false, $employeeChanged->active);
     }
 
-    function jsonEmployeeStructure($employee)
+    private function jsonEmployeeStructure($employee)
     {
         return [
             'id' => $employee->id,

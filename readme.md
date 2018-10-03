@@ -8,6 +8,9 @@
 </p>
 
 [![Code Style](https://img.shields.io/badge/code%20style-PSR--2-orange.svg)](https://www.php-fig.org/psr/psr-2/)
+[![Travis Build Status](https://travis-ci.org/guastallaigor/laravel-backoffice-example.svg?branch=master)](https://travis-ci.org/guastallaigor/laravel-backoffice-example)
+[![Code Coverage](https://scrutinizer-ci.com/g/guastallaigor/laravel-backoffice-example/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/guastallaigor/laravel-backoffice-example/?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/guastallaigor/laravel-backoffice-example/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/guastallaigor/laravel-backoffice-example/?branch=master)
 
 > **Note:** This project is ment to be used with the [Vue Backoffice Example](https://github.com/guastallaigor/vue-backoffice-example).
 > It has all the functionalities that is used with this project.

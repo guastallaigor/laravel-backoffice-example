@@ -25,4 +25,4 @@ before_install:
 
 script:
   - vendor/bin/phpunit --coverage-text
-  - vendor/bin/phpcs -- standard=psr2 tests/Feature
+  - vendor/bin/phpcs --standard=psr2 tests/Feature
