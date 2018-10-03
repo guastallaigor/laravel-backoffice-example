@@ -69,7 +69,7 @@ class EmployeeController extends Controller
         return $this->show($employee);
     }
 
-    public function destroy(EmployeeRequest $employee)
+    public function destroy(Employee $employee)
     {
         $employee->delete();
 

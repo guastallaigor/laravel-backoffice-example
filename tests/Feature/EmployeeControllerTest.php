@@ -144,6 +144,23 @@ class EmployeeControllerTest extends AuthenticatedTestCase
             ->assertJsonFragment($findedEmployee);
     }
 
+    public function testMustDeleteAnEmployee()
+    {
+        // We create one new employee and save it on the database
+        $employee = factory(Employee::class)->create();
+
+        // When we delete this employee
+        $uri = $this->endpoint . $employee->id;
+        $response = $this->json('DELETE', $uri);
+
+        // And then try to find it
+        $employeeRemove = Employee::find($employee->id);
+
+        // It should return nothing (null)
+        $response->assertStatus(204);
+        $this->assertEquals(null, $employeeRemove);
+    }
+
     function jsonEmployeeStructure($employee)
     {
         return [
