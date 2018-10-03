@@ -10,11 +10,11 @@ branches:
     - master
 
 before_script:
-  - cp .env.testing .env
+  - cp .env.travis .env
   - composer self-update
   - composer install --no-interaction
   - php artisan key:generate
-  - php artisan migrate --seed
+  - php artisan migrate
   - pear install pear/PHP_CodeSniffer
 
 script:
