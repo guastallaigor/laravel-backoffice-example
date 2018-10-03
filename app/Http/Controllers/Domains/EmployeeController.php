@@ -63,7 +63,8 @@ class EmployeeController extends Controller
         $employee->number = $request->json('number');
         $employee->neighborhood = $request->json('neighborhood');
         $employee->complement = $request->json('complement');
-        $employee->password = bcrypt($request->json('password'));
+        $password = $request->json('password');
+        $employee->password = is_string($password) ? bcrypt($password) : '';
         $employee->active = true;
         $employee->save();
 

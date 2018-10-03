@@ -33,7 +33,7 @@ class EmployeeControllerTest extends AuthenticatedTestCase
     public function testResourceIndexMethodMustReturnAnEmployeeList()
     {
         // We create 10 employees
-        $employees = factory(Employee::class, 10)->create();
+        factory(Employee::class, 10)->create();
 
         // When we request the all of the employees
         $response = $this->json('GET', $this->endpoint);
