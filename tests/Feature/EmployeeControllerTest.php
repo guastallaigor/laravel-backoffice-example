@@ -17,8 +17,7 @@ class EmployeeControllerTest extends AuthenticatedTestCase
 
     public function testResourceShowMethodMustReturnAnEmployeeData()
     {
-        // We have 10 employees are created
-        /** @var Employee $employees */
+        // We create 10 employees
         $employees = factory(Employee::class, 10)->create();
         $first = $employees->first();
 
@@ -33,8 +32,7 @@ class EmployeeControllerTest extends AuthenticatedTestCase
 
     public function testResourceIndexMethodMustReturnAnEmployeeList()
     {
-        // We have 10 employees are created
-        /** @var Employee $employees */
+        // We create 10 employees
         $employees = factory(Employee::class, 10)->create();
 
         // When we request the all of the employees

@@ -11,6 +11,7 @@ class AuthControllerInvalidTest extends TestCase
 
     public function testLoginWithInvalidCredentials()
     {
+        //When we try to login passing wrong credentials
         $payload = [
             'login' => 'foo',
             'password' => 'bar',
@@ -18,6 +19,7 @@ class AuthControllerInvalidTest extends TestCase
 
         $response = $this->json('POST', 'api/v1/backoffice/login', $payload);
 
+        // It should return an error invalid_credentials
         $response
             ->assertStatus(401)
             ->assertJson(['error' => 'invalid_credentials']);
