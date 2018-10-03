@@ -22,6 +22,6 @@ class AuthControllerInvalidTest extends TestCase
         // It should return an error invalid_credentials
         $response
             ->assertStatus(401)
-            ->assertJson(['error' => 'invalid_credentials']);
+            ->assertJson([ 'error' => 'invalid_credentials' ]);
     }
 }

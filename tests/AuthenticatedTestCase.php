@@ -14,6 +14,7 @@ abstract class AuthenticatedTestCase extends TestCase
     use CreatesApplication;
 
     protected $loggedUser;
+    protected $oldExceptionHandler;
 
     public function setup()
     {
@@ -33,7 +34,7 @@ abstract class AuthenticatedTestCase extends TestCase
         ];
     }
 
-    public function json($method, $uri, array $data = [], array $headers = [])
+    public function json($method, $uri, array $data = [ ], array $headers = [ ])
     {
         $headers = array_merge($headers, $this->headers());
 

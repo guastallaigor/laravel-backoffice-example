@@ -29,6 +29,6 @@ class AuthControllerTest extends AuthenticatedTestCase
         // It should return a JWT token
         $response
             ->assertStatus(200)
-            ->assertJsonStructure(['token']);
+            ->assertJsonStructure([ 'token' ]);
     }
 }

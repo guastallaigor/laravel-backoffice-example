@@ -22,7 +22,7 @@ class EmployeeControllerTest extends AuthenticatedTestCase
         $first = $employees->first();
 
         // When we request the first one
-        $response = $this->json('GET', $this->endpoint . $first->id);
+        $response = $this->json('GET', $this->endpoint.$first->id);
 
         // It should return a valid, one employee json
         $response
@@ -89,9 +89,9 @@ class EmployeeControllerTest extends AuthenticatedTestCase
         $id = $findedEmployee ? $findedEmployee->id + 1 : 1;
 
         // When we save this new employee
-        $newEmployee['password'] = 'teste123';
-        $newEmployee['password_confirmation'] = 'teste123';
-        $newEmployee['active'] = true;
+        $newEmployee[ 'password' ] = 'teste123';
+        $newEmployee[ 'password_confirmation' ] = 'teste123';
+        $newEmployee[ 'active' ] = true;
         $response = $this->json('POST', $this->endpoint, $newEmployee);
 
         // It should return this valid json employee
@@ -99,19 +99,19 @@ class EmployeeControllerTest extends AuthenticatedTestCase
             ->assertStatus(201)
             ->assertJson([
                 'id' => $id,
-                'full_name' => $newEmployee['full_name'],
-                'br_cpf' => $newEmployee['br_cpf'],
-                'email' => $newEmployee['email'],
-                'telephone_type' => $newEmployee['telephone_type'],
-                'telephone' => $newEmployee['telephone'],
-                'zip_code' => $newEmployee['zip_code'],
-                'city' => $newEmployee['city'],
-                'state' => $newEmployee['state'],
-                'avenue' => $newEmployee['avenue'],
-                'number' => $newEmployee['number'],
-                'neighborhood' => $newEmployee['neighborhood'],
-                'complement' => $newEmployee['complement'],
-                'active' => $newEmployee['active'],
+                'full_name' => $newEmployee[ 'full_name' ],
+                'br_cpf' => $newEmployee[ 'br_cpf' ],
+                'email' => $newEmployee[ 'email' ],
+                'telephone_type' => $newEmployee[ 'telephone_type' ],
+                'telephone' => $newEmployee[ 'telephone' ],
+                'zip_code' => $newEmployee[ 'zip_code' ],
+                'city' => $newEmployee[ 'city' ],
+                'state' => $newEmployee[ 'state' ],
+                'avenue' => $newEmployee[ 'avenue' ],
+                'number' => $newEmployee[ 'number' ],
+                'neighborhood' => $newEmployee[ 'neighborhood' ],
+                'complement' => $newEmployee[ 'complement' ],
+                'active' => $newEmployee[ 'active' ],
             ])
             ->assertJsonStructure([
                 'updated_at',
@@ -126,11 +126,11 @@ class EmployeeControllerTest extends AuthenticatedTestCase
 
         // We create one new employee on memory
         $employeeModified = factory(Employee::class)->make()->toArray();
-        $employeeModified['password'] = 'teste123';
-        $employeeModified['password_confirmation'] = 'teste123';
+        $employeeModified[ 'password' ] = 'teste123';
+        $employeeModified[ 'password_confirmation' ] = 'teste123';
 
         // When we edit this employee
-        $uri = $this->endpoint . $employee->id;
+        $uri = $this->endpoint.$employee->id;
         $response = $this->json('PUT', $uri, $employeeModified);
 
         // And find the employee edited in the database
@@ -148,7 +148,7 @@ class EmployeeControllerTest extends AuthenticatedTestCase
         $employee = factory(Employee::class)->create();
 
         // When we delete this employee
-        $uri = $this->endpoint . $employee->id;
+        $uri = $this->endpoint.$employee->id;
         $response = $this->json('DELETE', $uri);
 
         // And then try to find it
@@ -168,7 +168,7 @@ class EmployeeControllerTest extends AuthenticatedTestCase
         $employee->active = false;
 
         // When we change this employee to active
-        $uri = $this->endpoint . 'active/' . $employee->id;
+        $uri = $this->endpoint.'active/'.$employee->id;
         $response = $this->json('POST', $uri);
 
         // And then try to find it
@@ -193,7 +193,7 @@ class EmployeeControllerTest extends AuthenticatedTestCase
         $employee->active = true;
 
         // When we change this employee to inactive
-        $uri = $this->endpoint . 'inactive/' . $employee->id;
+        $uri = $this->endpoint.'inactive/'.$employee->id;
         $response = $this->json('POST', $uri);
 
         // And then try to find it
