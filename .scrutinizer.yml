@@ -32,3 +32,8 @@ build:
                 coverage:
                     file: 'tests/clover.xml'
                     format: 'clover'
+    nodes:
+        analysis:
+            tests:
+                override:
+                    - php-scrutinizer-run --enable-security-analysis

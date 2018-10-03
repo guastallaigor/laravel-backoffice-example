@@ -46,8 +46,8 @@ DELETE | api/v1/backoffice/employee/:id | Delete an employee
 
 ## TODO
 
-* [ ] Add Travis CI.
-* [ ] Add Scrutinizer CI.
+* [X] Add Travis CI.
+* [X] Add Scrutinizer CI.
 * [ ] Add unit tests.
 * [ ] Add more functionalities.
 * [ ] Add 90%+ test coverage.
