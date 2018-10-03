@@ -24,7 +24,7 @@ $factory->define(Employee::class, function (Faker $faker) {
         'city' => $faker->city,
         'state' => $faker->state,
         'avenue' => $faker->streetName,
-        'number' => $faker->buildingNumber,
+        'number' => ltrim($faker->buildingNumber, '0'),
         'neighborhood' => $faker->citySuffix,
         'complement' => $faker->text(10),
         'password' => $password ?: $password = bcrypt('teste123'),

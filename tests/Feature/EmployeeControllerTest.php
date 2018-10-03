@@ -161,6 +161,56 @@ class EmployeeControllerTest extends AuthenticatedTestCase
         $this->assertEquals(null, $employeeRemove);
     }
 
+    public function testMustActiveAnEmployee()
+    {
+        // We create one new employee and save it on the database
+        $employee = factory(Employee::class)->create();
+
+        // This employee is inactive
+        $employee->active = false;
+
+        // When we change this employee to active
+        $uri = $this->endpoint . 'active/' . $employee->id;
+        $response = $this->json('POST', $uri);
+
+        // And then try to find it
+        $employeeChanged = Employee::find($employee->id);
+
+        // It should this valid json employee, with active = true
+        $response
+            ->assertStatus(200)
+            ->assertJsonFragment([
+                'active' => true,
+            ]);
+
+        $this->assertEquals(true, $employeeChanged->active);
+    }
+
+    public function testMustInactiveAnEmployee()
+    {
+        // We create one new employee and save it on the database
+        $employee = factory(Employee::class)->create();
+
+        // This employee is active
+        $employee->active = true;
+
+        // When we change this employee to inactive
+        $uri = $this->endpoint . 'inactive/' . $employee->id;
+        $response = $this->json('POST', $uri);
+
+        // And then try to find it
+        $employeeChanged = Employee::find($employee->id);
+
+        // It should this valid json employee, with active = false
+        $response
+            ->assertStatus(200)
+            ->assertJsonFragment([
+                'active' => false,
+            ]);
+
+        $this->assertEquals(false, $employeeChanged->active);
+    }
+
     function jsonEmployeeStructure($employee)
     {
         return [
