@@ -47,6 +47,7 @@ DELETE | api/v1/backoffice/employee/:id | Delete an employee
 ## Demo
 
 Want to see it running? You can check it out at https://vue-backoffice-example.herokuapp.com
+
 Or you can just use the API at https://laravel-backoffice-example.herokuapp.com
 
 ## TODO
