@@ -1,1 +1,1 @@
-web: vendor/bin/heroku-php-apache2 public/
+web: bin/start-nginx bundle exec unicorn -c config/unicorn.rb
