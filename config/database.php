@@ -1,5 +1,8 @@
 <?php
 
+$DB_CONNECTION = parse_url(getenv("DB_CONNECTION"));
+$DATABASE_URL = parse_url(getenv("DATABASE_URL"));
+
 return [
 
     /*
