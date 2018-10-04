@@ -1,6 +1,8 @@
 filter:
   paths:
     - 'app/Http/Controllers/Domains/*'
+    - 'app/Http/Requests/*'
+    - 'app/Models/*'
     - 'tests/*'
   excluded_paths:
     - 'app/Http/Controllers/Auth/*'

@@ -48,9 +48,10 @@ DELETE | api/v1/backoffice/employee/:id | Delete an employee
 
 * [X] Add Travis CI.
 * [X] Add Scrutinizer CI.
+* [X] Add 90%+ test coverage.
+* [ ] Add PHP DocBlocks.
 * [ ] Add unit tests.
 * [ ] Add more functionalities.
-* [ ] Add 90%+ test coverage.
 
 ## License
 

@@ -1,6 +1,6 @@
 <?php
 
-use App\Employee;
+use App\Models\Employee;
 use Illuminate\Database\Seeder;
 
 class EmployeesTableSeeder extends Seeder

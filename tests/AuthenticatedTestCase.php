@@ -3,7 +3,7 @@
 namespace Tests;
 
 use JWTAuth;
-use App\Employee;
+use App\Models\Employee;
 use App\Exceptions\Handler;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Foundation\Testing\RefreshDatabase;

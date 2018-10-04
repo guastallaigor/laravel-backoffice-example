@@ -2,7 +2,7 @@
 
 namespace Tests\Feature;
 
-use App\Employee;
+use App\Models\Employee;
 use Tests\AuthenticatedTestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 

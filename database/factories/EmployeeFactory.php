@@ -1,6 +1,6 @@
 <?php
 
-use App\Employee;
+use App\Models\Employee;
 use Faker\Generator as Faker;
 use Faker\Provider\pt_BR\Address AS BrazilianAddress;
 use Faker\Provider\pt_BR\PhoneNumber;
