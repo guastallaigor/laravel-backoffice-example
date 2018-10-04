@@ -44,6 +44,11 @@ POST | api/v1/backoffice/employee/inactive/:id | Change an employee to inactive
 PUT | api/v1/backoffice/employee/:id | Modify an employee data
 DELETE | api/v1/backoffice/employee/:id | Delete an employee
 
+## Demo
+
+Want to see it running? You can check it out at https://vue-backoffice-example.herokuapp.com
+Or you can just use the API at https://laravel-backoffice-example.herokuapp.com
+
 ## TODO
 
 * [X] Add Travis CI.
