@@ -14,6 +14,9 @@ use Illuminate\Http\Request;
 */
 
 // 'permissions'
+Route::get('oi', function() {
+    echo 'oi';
+});
 Route::middleware([ 'api' ])->group(function () {
     Route::group([
             'prefix' => '/v1/backoffice/',
