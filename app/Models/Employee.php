@@ -15,9 +15,6 @@ class Employee extends Model implements Authenticatable
 
     protected $table = 'employees';
     public $timestamps = true;
-    private $password;
-    private $email;
-    private $phone_number;
 
     /**
      * The attributes that should be hidden for arrays.
