@@ -13,7 +13,7 @@
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/guastallaigor/laravel-backoffice-example/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/guastallaigor/laravel-backoffice-example/?branch=master)
 [![Code Intelligence Status](https://scrutinizer-ci.com/g/guastallaigor/laravel-backoffice-example/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
 
-> **Note:** This project is ment to be used with the [Vue Backoffice Example](https://github.com/guastallaigor/vue-backoffice-example).
+> **Note:** This project is ment to be used with [Vue Backoffice Example](https://github.com/guastallaigor/vue-backoffice-example).
 > It has all the functionalities that is used with this project.
 > This project uses Laravel 5.7.
 
@@ -43,6 +43,12 @@ POST | api/v1/backoffice/employee/active/:id | Change an employee to active
 POST | api/v1/backoffice/employee/inactive/:id | Change an employee to inactive
 PUT | api/v1/backoffice/employee/:id | Modify an employee data
 DELETE | api/v1/backoffice/employee/:id | Delete an employee
+
+## Demo
+
+Want to see it running? You can check it out at https://vue-backoffice-example.herokuapp.com
+
+Or you can just use the API at https://laravel-backoffice-example.herokuapp.com
 
 ## TODO
 
